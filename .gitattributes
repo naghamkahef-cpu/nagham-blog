@@ -6,6 +6,10 @@
 *.md diff=markdown
 *.php diff=php
 
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+
