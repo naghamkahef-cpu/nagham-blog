@@ -1,0 +1,142 @@
+/* Post Show page (matches layout.css theme) */
+
+.show-wrap{
+  display:flex;
+  justify-content:center;
+  padding: 6px 0; /* بسيط لأن .page أصلاً فيها padding */
+}
+
+/* Main card */
+.post-card-big{
+  width: 100%;
+  max-width: 860px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ===== Author row ===== */
+.author-row{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.55);
+  margin-bottom: 14px;
+}
+
+.author-avatar-link{
+  display:inline-flex;
+  border-radius: 999px;
+  overflow:hidden;
+  flex: 0 0 auto;
+}
+
+.author-avatar{
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.40);
+}
+
+.author-meta{
+  display:flex;
+  flex-direction:column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.author-name{
+  color: rgba(59,36,24,0.92);
+  font-weight: 700;
+  text-decoration:none;
+  line-height: 1.1;
+  display:inline-block;
+
+  /* حتى ما يكسر التصميم لو الاسم طويل */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.author-name:hover{
+  text-decoration: underline;
+}
+
+.author-date{
+  font-size: 0.84rem;
+  color: rgba(59,36,24,0.60);
+}
+
+/* ===== Title + Description ===== */
+.post-title-big{
+  font-family: 'Playfair Display', serif;
+  color: var(--brown);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 12px 0 10px;
+
+  word-break: break-word;
+}
+
+.post-desc-big{
+  color: rgba(31,41,51,0.80);
+  line-height: 1.85;
+  font-size: 1rem;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ===== Image ===== */
+.post-image-wrap-big{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.25);
+  margin: 10px 0 14px;
+}
+
+.post-image-big{
+  width:100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  display:block;
+}
+
+/* ===== Actions ===== */
+.post-actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 520px){
+  .post-card-big{
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .post-title-big{
+    font-size: 1.55rem;
+  }
+
+  .author-avatar{
+    width: 40px;
+    height: 40px;
+  }
+
+  .post-image-big{
+    max-height: 420px;
+  }
+}

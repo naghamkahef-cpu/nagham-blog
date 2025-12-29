@@ -1,0 +1,379 @@
+/* ================== Success message ================== */
+.success-box{
+  margin-bottom: 14px;
+  background: rgba(34,197,94,0.10);
+  border: 1px solid rgba(34,197,94,0.25);
+  color: rgba(12, 90, 40, 0.95);
+  padding: 10px 12px;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(34,197,94,0.08);
+}
+
+/* ================== Layout ================== */
+.me-grid{
+  display:grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px){
+  .me-grid{
+    grid-template-columns: 1fr 1.2fr;
+    align-items:start;
+  }
+}
+
+/* ================== Cards ================== */
+.me-card{
+  background: rgba(255,255,255,0.30);
+  border: 1px solid rgba(255,255,255,0.75);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ================== Profile Head ================== */
+.me-head{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.55);
+  margin-bottom: 14px;
+}
+
+.me-avatar{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.4);
+}
+
+.me-meta{
+  display:flex;
+  flex-direction:column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.me-name{
+  font-family: 'Playfair Display', serif;
+  color: #3b2418;
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.me-email{
+  color: rgba(31,41,51,0.70);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+/* ================== Info rows ================== */
+.me-info{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.me-row{
+  display:flex;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.me-label{
+  color: rgba(59,36,24,0.78);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.me-value{
+  color: rgba(31,41,51,0.78);
+  font-size: 0.92rem;
+}
+
+.me-row-bio{
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.me-bio{
+  margin-top: 6px;
+  color: rgba(31,41,51,0.78);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* ================== Actions ================== */
+.me-actions{
+  display:flex;
+  gap: 10px;
+  justify-content:flex-end;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.danger-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(220,38,38,0.92);
+  color: #fff;
+  border: 0;
+  cursor:pointer;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(220,38,38,0.25);
+  transition: transform .12s ease, filter .15s ease;
+}
+
+.danger-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(0.95);
+}
+
+.danger-btn:active{
+  transform: translateY(0);
+}
+
+/* ================== My Posts header ================== */
+.me-posts-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.55);
+  margin-bottom: 12px;
+}
+
+.me-posts-title{
+  font-family: 'Playfair Display', serif;
+  color: #3b2418;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.me-posts-count{
+  color: rgba(59,36,24,0.65);
+  font-size: 0.9rem;
+}
+
+/* ================== Posts list ================== */
+.me-posts-list{
+  list-style:none;
+  padding: 0;
+  margin: 0;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.me-post-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.55);
+  transition: transform .12s ease, background-color .15s ease;
+}
+
+.me-post-item:hover{
+  background: rgba(255,255,255,0.30);
+  transform: translateY(-1px);
+}
+
+.me-post-main{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap: 2px;
+}
+
+.me-post-link{
+  color: rgba(59,36,24,0.92);
+  font-weight: 800;
+  text-decoration:none;
+  line-height: 1.15;
+
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
+}
+
+.me-post-link:hover{
+  text-decoration: underline;
+}
+
+.me-post-date{
+  font-size: 0.84rem;
+  color: rgba(59,36,24,0.60);
+}
+
+/* Buttons next to post */
+.me-post-actions{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  flex-shrink:0;
+}
+
+.mini-btn{
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration:none;
+  color: rgba(59,36,24,0.88);
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.55);
+  cursor:pointer;
+  font-weight: 700;
+  transition: transform .12s ease, background-color .15s ease, filter .15s ease;
+}
+
+.mini-btn:hover{
+  background: rgba(255,255,255,0.30);
+  transform: translateY(-1px);
+}
+
+.mini-btn:active{ transform: translateY(0); }
+
+.mini-btn.danger{
+  color: rgba(255,255,255,0.95);
+  background: rgba(220,38,38,0.90);
+  border: 0;
+}
+
+.mini-btn.danger:hover{
+  filter: brightness(0.95);
+}
+
+/* ================== Empty state ================== */
+.empty-mini{
+  padding: 14px 8px;
+  text-align:center;
+  color: rgba(31,41,51,0.75);
+}
+
+.empty-mini h3{
+  font-family: 'Playfair Display', serif;
+  color:#3b2418;
+  margin-bottom: 4px;
+}
+
+/* ================== Modal (delete account) ================== */
+.modal::backdrop{
+  background: rgba(0,0,0,0.30);
+}
+
+.modal-card{
+  width: min(520px, 92%);
+  margin: auto;
+  border: 0;
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 22px 50px rgba(15,23,42,0.25);
+}
+
+.modal-title{
+  font-family: 'Playfair Display', serif;
+  color:#3b2418;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.modal-text{
+  color: rgba(31,41,51,0.75);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.modal-group{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.modal-label{
+  font-weight: 700;
+  color: rgba(59,36,24,0.85);
+  font-size: 0.9rem;
+}
+
+.modal-input{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(209,213,219,0.9);
+  outline:none;
+}
+
+.modal-input:focus{
+  border-color: #e7862b;
+  box-shadow: 0 0 0 2px rgba(231,134,43,0.25);
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pagination-wrap{
+  margin-top: 16px;
+  display:flex;
+  justify-content:center;
+}
+
+.pagination-wrap nav{
+  display:flex;
+  justify-content:center;
+}
+
+.pagination-wrap .pagination{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style:none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-wrap .page-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration:none;
+  color: rgba(59,36,24,0.85);
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.55);
+}
+
+.pagination-wrap .page-item.active .page-link{
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.75);
+}
+
+.pagination-wrap .page-item.disabled .page-link{
+  opacity: 0.55;
+  cursor: not-allowed;
+}

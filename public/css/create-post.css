@@ -1,0 +1,157 @@
+/* Create Post page (matches layout.css theme) */
+
+.create-wrap{
+  display:flex;
+  justify-content:center;
+  padding: 6px 0; /* بسيط لأن .page أصلاً فيها padding */
+}
+
+.create-card{
+  width: 100%;
+  max-width: 640px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.create-title{
+  font-family: 'Playfair Display', serif;
+  color: var(--brown);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align:center;
+  margin-bottom: 14px;
+}
+
+/* Form */
+.create-form{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+}
+
+.form-label{
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: rgba(59,36,24,0.85);
+}
+
+/* Inputs */
+.form-input{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.92);
+  outline:none;
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease;
+}
+
+.form-input::placeholder{
+  color: rgba(107,114,128,0.85);
+}
+
+.form-input:focus{
+  border-color: var(--accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(231,134,43,0.18);
+}
+
+.form-textarea{
+  min-height: 120px;
+  resize: vertical;
+}
+
+.file-input{
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+/* Small helper text */
+.hint{
+  font-size: 0.82rem;
+  color: rgba(59,36,24,0.60);
+  margin-top: 2px;
+}
+
+/* Actions */
+.form-actions{
+  display:flex;
+  gap: 10px;
+  justify-content:flex-end;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.secondary-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration:none;
+  font-weight: 600;
+  color: rgba(59,36,24,0.85);
+  background: rgba(255,255,255,0.22);
+  border: 1px solid rgba(255,255,255,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform .12s ease, background-color .15s ease, box-shadow .15s ease;
+}
+
+.secondary-btn:hover{
+  background: rgba(255,255,255,0.30);
+  transform: translateY(-1px);
+}
+
+/* Error box */
+.error-box{
+  background: rgba(255, 0, 0, 0.06);
+  border: 1px solid rgba(255, 0, 0, 0.20);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.error-box ul{
+  padding-left: 18px;
+  margin: 0;
+}
+
+.error-box li{
+  color: rgba(120, 20, 20, 0.95);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive tweak */
+@media (max-width: 520px){
+  .create-card{
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .create-title{
+    font-size: 1.55rem;
+  }
+
+  .form-actions{
+    justify-content: stretch;
+  }
+
+  .secondary-btn{
+    flex: 1;
+  }
+}
