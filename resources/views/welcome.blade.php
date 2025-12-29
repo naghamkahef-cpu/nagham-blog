@@ -11,14 +11,12 @@
 <body>
     <div class="welcome-wrapper">
         <div class="glass-card">
-            <h1 class="title">
-                Welcome to Nagham Blog Website
-            </h1>
+  <span class="brand">Nagham Blog</span>
+  <h1 class="title">Welcome to Nagham Blog</h1>
+  <p class="subtitle">Discover stories, ideas, and posts from our writers.</p>
 
-            <a href="{{ route('login') }}" class="login-btn" style="position:relative; z-index:999;">
-  Login
-</a>
-        </div>
+  <a href="{{ route('login') }}" class="login-btn">Login</a>
+</div>
     </div>
 </body>
 </html>
