@@ -25,7 +25,7 @@
   align-items:center;
   gap: 12px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 14px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .author-name{
-  color: rgba(59,36,24,0.92);
+  color: var(--text-main);
   font-weight: 700;
   text-decoration:none;
   line-height: 1.1;
@@ -72,13 +72,13 @@
 
 .author-date{
   font-size: 0.84rem;
-  color: rgba(59,36,24,0.60);
+  color: var(--text-dim);
 }
 
 /* ===== Title + Description ===== */
 .post-title-big{
   font-family: 'Playfair Display', serif;
-  color: var(--brown);
+  color: var(--accent-cyan);
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.15;
@@ -88,7 +88,7 @@
 }
 
 .post-desc-big{
-  color: rgba(31,41,51,0.80);
+  color: var(--text-dim);
   line-height: 1.85;
   font-size: 1rem;
   margin-bottom: 14px;

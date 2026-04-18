@@ -25,11 +25,11 @@
 
 /* ================== Cards ================== */
 .me-card{
-  background: rgba(255,255,255,0.30);
-  border: 1px solid rgba(255,255,255,0.75);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 22px;
   padding: 18px;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -40,7 +40,7 @@
   align-items:center;
   gap: 12px;
   padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 14px;
 }
 
@@ -62,14 +62,14 @@
 
 .me-name{
   font-family: 'Playfair Display', serif;
-  color: #3b2418;
+  color: var(--accent-cyan);
   font-size: 1.55rem;
   font-weight: 600;
   line-height: 1.1;
 }
 
 .me-email{
-  color: rgba(31,41,51,0.70);
+  color: var(--text-dim);
   font-size: 0.95rem;
   word-break: break-word;
 }
@@ -87,14 +87,14 @@
   gap: 12px;
   padding: 12px 12px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .me-label{
-  color: rgba(59,36,24,0.78);
+  color: var(--accent-cyan);
   font-weight: 700;
   font-size: 0.92rem;
 }
@@ -111,7 +111,7 @@
 
 .me-bio{
   margin-top: 6px;
-  color: rgba(31,41,51,0.78);
+  color: var(--text-dim);
   line-height: 1.7;
   white-space: pre-wrap;
 }
@@ -156,13 +156,13 @@
   align-items:baseline;
   gap: 10px;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 12px;
 }
 
 .me-posts-title{
   font-family: 'Playfair Display', serif;
-  color: #3b2418;
+  color: var(--accent-cyan);
   font-size: 1.35rem;
   font-weight: 600;
 }
@@ -189,13 +189,13 @@
   gap: 12px;
   padding: 12px 12px;
   border-radius: 16px;
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   transition: transform .12s ease, background-color .15s ease;
 }
 
 .me-post-item:hover{
-  background: rgba(255,255,255,0.30);
+  background: rgba(255,255,255,0.1);
   transform: translateY(-1px);
 }
 

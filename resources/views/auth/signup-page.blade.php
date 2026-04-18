@@ -2,164 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Nagham Blog | Sign up</title>
+    <title>Nagham Blog | Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/antigravity.css') }}">
 </head>
 <body>
-    <div class="auth-wrapper">
-        <div class="auth-card">
-            <h1 class="auth-title">Sign up</h1>
 
-            {{-- Errors --}}
-            @if ($errors->any())
-                <div class="error-box">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+<div class="login-card">
+    <div class="login-header">
+        <h1 class="login-title">Join Us</h1>
+        <p class="login-subtitle">Create your account to start blogging</p>
+    </div>
+
+    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+        @csrf
+        
+        <div class="form-grid">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="name" class="form-input" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-input" placeholder="name@site.com" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label class="form-label">Birth Date</label>
+                <div class="date-row">
+                    <input type="number" name="day" class="form-input" placeholder="DD" min="1" max="31">
+                    <select name="month" class="form-input">
+                        <option value="" disabled selected>Month</option>
+                        @foreach(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] as $key => $month)
+                            <option value="{{ $key + 1 }}">{{ $month }}</option>
                         @endforeach
-                    </ul>
+                    </select>
+                    <input type="number" name="year" class="form-input" placeholder="YYYY" min="1950" max="2026">
                 </div>
-            @endif
+            </div>
 
-            <form method="POST"
-                  action="{{ route('register') }}"
-                  class="auth-form"
-                  enctype="multipart/form-data">
-                @csrf
+            <div class="form-group">
+                <label class="form-label">Profile Image</label>
+                <input type="file" name="image" class="form-input">
+            </div>
 
-                {{-- Name --}}
-                <div class="form-group">
-                    <label for="name" class="form-label">Full name</label>
-                    <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        class="form-input"
-                        value="{{ old('name') }}"
-                        required
-                        autocomplete="name"
-                    >
+            <div class="form-group">
+                <label class="form-label">Bio (Short)</label>
+                <input type="text" name="bio" class="form-input" placeholder="Blogger & Dev">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="password-wrapper">
+                    <input id="pass" type="password" name="password" class="form-input" required>
+                    <button type="button" onclick="toggle('pass')" class="toggle-btn">👁</button>
                 </div>
+            </div>
 
-                {{-- Image --}}
-                <div class="form-group">
-                    <label for="image" class="form-label">Profile image</label>
-                    <input
-                        id="image"
-                        type="file"
-                        name="image"
-                        class="form-input file-input"
-                        accept="image/*"
-                    >
+            <div class="form-group">
+                <label class="form-label">Confirm</label>
+                <div class="password-wrapper">
+                    <input id="conf" type="password" name="password_confirmation" class="form-input" required>
+                    <button type="button" onclick="toggle('conf')" class="toggle-btn">👁</button>
                 </div>
-
-                {{-- Email --}}
-                <div class="form-group">
-                    <label for="email" class="form-label">Email</label>
-                    <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        class="form-input"
-                        value="{{ old('email') }}"
-                        required
-                        autocomplete="username"
-                    >
-                </div>
-
-                {{-- Birth date --}}
-                <div class="form-group">
-                    <label for="birth_date" class="form-label">Birth date</label>
-                    <input
-                        id="birth_date"
-                        type="date"
-                        name="birth_date"
-                        class="form-input"
-                        value="{{ old('birth_date') }}"
-                    >
-                </div>
-
-                {{-- Bio --}}
-                <div class="form-group">
-                    <label for="bio" class="form-label">Short bio about you</label>
-                    <textarea
-                        id="bio"
-                        name="bio"
-                        class="form-input form-textarea"
-                        rows="3"
-                        placeholder="Write a short description about yourself..."
-                    >{{ old('bio') }}</textarea>
-                </div>
-
-    {{-- Password --}}
-<div class="form-group">
-    <label for="password" class="form-label">Password</label>
-
-    <div class="input-wrap">
-        <input
-            id="password"
-            type="password"
-            name="password"
-            class="form-input has-toggle"
-            required
-            autocomplete="new-password"
-        >
-        <button type="button" class="toggle-btn" data-toggle="password" aria-label="Show password">
-  👁
-</button>
-    </div>
-</div>
-
-{{-- Password confirmation --}}
-<div class="form-group">
-    <label for="password_confirmation" class="form-label">Confirm password</label>
-
-    <div class="input-wrap">
-        <input
-            id="password_confirmation"
-            type="password"
-            name="password_confirmation"
-            class="form-input has-toggle"
-            required
-            autocomplete="new-password"
-        >
-        <button type="button" class="toggle-btn" data-toggle="password_confirmation" aria-label="Show password confirmation">
-  👁
-</button>
-    </div>
-</div>
-
-                <button type="submit" class="auth-btn">
-                    Create account
-                </button>
-            </form>
-
-            <p class="helper-text">
-                Already have an account?
-                <a href="{{ route('login') }}" class="helper-link">
-                    Login here
-                </a>
-            </p>
+            </div>
         </div>
-    </div>
+
+        <button type="submit" class="login-btn">Create Account</button>
+    </form>
+
+    <p class="helper-text">
+        Already have an account? <a href="{{ route('login') }}" class="helper-link">Login</a>
+    </p>
+</div>
+
 <script>
-  document.querySelectorAll('.toggle-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const inputId = btn.getAttribute('data-toggle');
-      const input = document.getElementById(inputId);
-      if (!input) return;
-
-      const hidden = input.type === 'password';
-      input.type = hidden ? 'text' : 'password';
-
-      btn.textContent = hidden ? '🙈' : '👁';
-      btn.setAttribute('aria-label', hidden ? 'Hide password' : 'Show password');
-    });
-  });
+    function toggle(id) {
+        const input = document.getElementById(id);
+        input.type = input.type === 'password' ? 'text' : 'password';
+    }
 </script>
 
-
+    <script src="{{ asset('js/antigravity.js') }}"></script>
 </body>
 </html>
